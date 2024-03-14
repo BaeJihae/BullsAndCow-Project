@@ -73,6 +73,10 @@ func compareNum(_ user: Int, _ com: Int) -> String {
     
     if count == 3 {
         return "파울"
+    }else if ballAndStrike[1] == 0{
+        return "\(ballAndStrike[0])볼"
+    }else if ballAndStrike[0] == 0{
+        return "\(ballAndStrike[1])스트라이크"
     }else {
         return "\(ballAndStrike[1])스트라이크 \(ballAndStrike[0])볼"
     }
