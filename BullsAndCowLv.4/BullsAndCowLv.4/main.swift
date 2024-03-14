@@ -86,7 +86,7 @@ func compareNum(_ user: Int, _ com: Int) -> String {
 // 게임 시작 함수
 func startGame() {
     
-    print("게임이 시작되었습니다.")
+    print("[ 숫자 야구 게임이 시작되었습니다. ]")
     print("===========================")
     print()
     
@@ -162,6 +162,7 @@ func main() {
         return main()
     case 3 :
         // 종료하기
+        print("[ 숫자 야구 게임을 종료합니다 ]")
         break
     default :
         return main()
