@@ -22,7 +22,7 @@ class GamePlay {
             print("0부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
             print("------------------------------------------")
             
-            user.userNum = getUserInput()
+            user.getUserInput()
             user.count += 1
             
             guard let userNum = user.userNum else { return }
@@ -43,6 +43,39 @@ class GamePlay {
                 print(compareNum(userNum, num))
                 print()
             }
+        }
+    }
+    
+    func compareNum(_ user: Int, _ com: Int) -> String {
+        
+        // ball과 strike를 가지는 배열
+        var ballAndStrike = [0, 0]
+        // 파울을 계산하는 변수
+        var count = 0
+        
+        let arrayUser: [Int] = String(user).map{ Int(String($0))! }
+        let arrayCom: [Int] = String(com).map{ Int(String($0))! }
+        
+        for (i, userNum) in arrayUser.enumerated() {
+            if arrayCom.contains(userNum) {
+                if arrayCom.firstIndex(of: userNum)! == i {
+                    ballAndStrike[1] += 1
+                }else {
+                    ballAndStrike[0] += 1
+                }
+            }else {
+                count += 1
+            }
+        }
+        
+        if count == 3 {
+            return "파울"
+        }else if ballAndStrike[1] == 0{
+            return "\(ballAndStrike[0])볼"
+        }else if ballAndStrike[0] == 0{
+            return "\(ballAndStrike[1])스트라이크"
+        }else {
+            return "\(ballAndStrike[1])스트라이크 \(ballAndStrike[0])볼"
         }
     }
 }
