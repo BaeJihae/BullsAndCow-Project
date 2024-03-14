@@ -61,8 +61,8 @@
 		2E1760D62BA2BFFE00B607B5 /* BullsAndCow */ = {
 			isa = PBXGroup;
 			children = (
-				2E1760E02BA2CE2900B607B5 /* User.swift */,
 				2E1760D72BA2BFFE00B607B5 /* main.swift */,
+				2E1760E02BA2CE2900B607B5 /* User.swift */,
 				2E1760DE2BA2C11200B607B5 /* Number.swift */,
 			);
 			path = BullsAndCow;

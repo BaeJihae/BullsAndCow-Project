@@ -56,8 +56,8 @@ func compareNum(_ user: Int, _ com: Int) -> String {
     // 파울을 계산하는 변수
     var count = 0
     
-    var arrayUser: [Int] = String(user).map{ Int(String($0))! }
-    var arrayCom: [Int] = String(com).map{ Int(String($0))! }
+    let arrayUser: [Int] = String(user).map{ Int(String($0))! }
+    let arrayCom: [Int] = String(com).map{ Int(String($0))! }
     
     for (i, userNum) in arrayUser.enumerated() {
         if arrayCom.contains(userNum) {
