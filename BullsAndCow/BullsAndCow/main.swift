@@ -89,12 +89,17 @@ func startGame() {
         user.userNum = getUserInput()
         user.count += 1
         
-        if user.userNum == number.num {
+        guard let userNum = user.userNum else { return }
+        guard let num = number.num else { return }
+        
+        if userNum == num {
             print("정답입니다!")
             print("축하합니다. \(user.count)만에 정답을 맞추었습니다! ")
             break
         }else{
             // 비교하는 함수
+            print("틀렸습니다!")
+            print(compareNum(userNum, num))
         }
     }
 }
