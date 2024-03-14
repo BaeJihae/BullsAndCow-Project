@@ -38,6 +38,36 @@ func getUserInput() -> Int {
     return input
 }
 
+// MARK: - 두 개의 숫자를 비교하여 문자열을 출력하는 함수
+func compareNum(_ user: Int, _ com: Int) -> String {
+    
+    // ball과 strike를 가지는 배열
+    var ballAndStrike = [0, 0]
+    // 파울을 계산하는 변수
+    var count = 0
+    
+    var arrayUser: [Int] = String(user).map{ Int(String($0))! }
+    var arrayCom: [Int] = String(com).map{ Int(String($0))! }
+    
+    for (i, userNum) in arrayUser.enumerated() {
+        if arrayCom.contains(userNum) {
+            if arrayCom.firstIndex(of: userNum)! == i {
+                ballAndStrike[1] += 1
+            }else {
+                ballAndStrike[0] += 1
+            }
+        }else {
+            count += 1
+        }
+    }
+    
+    if count == 3 {
+        print("파울")
+    }else {
+        print("\(ballAndStrike[1])스트라이크 \(ballAndStrike[0])볼")
+    }
+}
+
 
 // MARK: - 게임 시작 startGame() 함수
 
