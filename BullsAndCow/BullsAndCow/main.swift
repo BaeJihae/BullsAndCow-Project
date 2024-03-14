@@ -35,6 +35,16 @@ func getUserInput() -> Int {
         return getUserInput()
     }
     
+    // 문자열이 중복이 된 경우 에러처리
+    // 백의 자리, 십의 자리, 일의 자리
+    let hundred = input / 100
+    let tenDigit = ( input % 100 ) / 10
+    let one = input % 10
+    if hundred == tenDigit || tenDigit == one || hundred == one {
+        print("숫자가 중복되었습니다.")
+        return getUserInput()
+    }
+    
     return input
 }
 
@@ -76,6 +86,7 @@ func startGame() {
     
     print("게임이 시작되었습니다.")
     print("===========================")
+    print()
     
     let number = Number()
     number.getRandomNum()
@@ -83,9 +94,12 @@ func startGame() {
     let user = User()
     
     print("랜덤한 세자리 정수가 설정되었습니다.")
+    print()
     
     while true {
+        print("------------------------------------------")
         print("1부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
+        print("------------------------------------------")
         user.userNum = getUserInput()
         user.count += 1
         
@@ -93,15 +107,19 @@ func startGame() {
         guard let num = number.num else { return }
         
         if userNum == num {
+            print()
             print("정답입니다!")
-            print("축하합니다. \(user.count)만에 정답을 맞추었습니다! ")
+            print("축하합니다. \(user.count)번 만에 정답을 맞추었습니다! ")
+            print()
             break
         }else{
             // 비교하는 함수
+            print()
             print("틀렸습니다!")
             print(compareNum(userNum, num))
+            print()
         }
     }
 }
 
-
+startGame()
