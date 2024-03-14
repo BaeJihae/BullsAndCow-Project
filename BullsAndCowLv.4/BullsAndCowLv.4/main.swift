@@ -123,4 +123,49 @@ func startGame() {
     }
 }
 
-startGame()
+func choiceNum() -> Int {
+    print("---------------------------------------")
+    print("1. 게임 시작하기   2. 게임 기록보기  3. 종료하기 ")
+    print("=======================================")
+    
+    let choice = readLine()
+    
+    guard let choice = choice else {
+        return choiceNum()
+    }
+    guard let choice = Int(choice) else {
+        print("숫자를 입력해주세요.")
+        return choiceNum()
+    }
+    
+    if 1 > choice || choice > 3 {
+        print("번호를 잘못 입력하셨습니다. 다시 입력해주세요. ")
+        return choiceNum()
+    }else {
+        return choice
+    }
+}
+
+func main() {
+    print("=======================================")
+    print("환영합니다!! 원하시는 번호를 입력해주세요.")
+
+    // 번호를 입력하는 함수
+    let choice = choiceNum()
+    
+    switch choice {
+    case 1 :
+        startGame()
+        return main()
+    case 2 :
+        // 기록보기
+        return main()
+    case 3 :
+        // 종료하기
+        break
+    default :
+        return main()
+    }
+}
+
+main()
