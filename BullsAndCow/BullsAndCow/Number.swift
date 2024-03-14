@@ -12,12 +12,12 @@ class Number {
         var num = [Int]()
         
         while num.count < 3 {
-            var a = Int.random(in: 1...9)
+            let a = Int.random(in: 1...9)
             if num == [] || !num.contains(a) {
                 num.append(a)
             }
         }
         
-        self.num = num[0] * 100 + num[1] * 10 + num[0] * 1
+        self.num = num[0] * 100 + num[1] * 10 + num[2] * 1
     }
 }
