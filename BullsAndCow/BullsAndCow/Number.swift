@@ -8,8 +8,8 @@ class Number {
     
     var num: Int?
     
-    func getRandomNum() -> Int {
-        return (1...3).map{ $0*$0*Int.random(in: 1...9) }.reduce(0, +)
+    func getRandomNum() {
+        self.num = (1...3).map{ $0*$0*Int.random(in: 1...9) }.reduce(0, +)
     }
     
 }
