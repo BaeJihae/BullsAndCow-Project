@@ -48,10 +48,12 @@ class MainPlay {
         switch choice {
         case 1 :
             let startGame = GamePlay()
-            startGame.start()
+            let gameCount = startGame.start()
+            recordManager.setRecordArray(gameCount)
             return main()
         case 2 :
             // 기록보기
+            recordManager.getRecordArray()
             return main()
         case 3 :
             // 종료하기

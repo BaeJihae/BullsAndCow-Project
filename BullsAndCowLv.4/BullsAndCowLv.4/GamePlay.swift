@@ -7,10 +7,8 @@
 
 class GamePlay {
     
-    func start() {
+    func start() -> Int {
         print("[ 숫자 야구 게임이 시작되었습니다. ]")
-        print("===========================")
-        print()
         
         let number = Number()
         let user = User()
@@ -25,23 +23,19 @@ class GamePlay {
             user.getUserInput()
             user.count += 1
             
-            guard let userNum = user.userNum else { return }
-            guard let num = number.num else { return }
+            guard let userNum = user.userNum else { return 0 }
+            guard let num = number.num else { return 0 }
             
             if userNum == num {
                 // 정답을 맞힌 경우
-                print()
                 print("정답입니다!")
-                print("축하합니다. \(user.count)번 만에 정답을 맞추었습니다! ")
-                print()
-                break
+                print("축하합니다. \(user.count)번 만에 정답을 맞추었습니다!\n")
+                return user.count
             }else{
                 // 정답을 틀린 경우
                 // 비교하는 함수
-                print()
                 print("틀렸습니다!")
                 print(compareNum(userNum, num))
-                print()
             }
         }
     }
@@ -69,13 +63,13 @@ class GamePlay {
         }
         
         if faul == 3 {
-            return "파울"
+            return "파울\n"
         }else if strike == 0{
-            return "\(ball)볼"
+            return "\(ball)볼\n"
         }else if ball == 0{
-            return "\(strike)스트라이크"
+            return "\(strike)스트라이크\n"
         }else {
-            return "\(strike)스트라이크 \(ball)볼"
+            return "\(strike)스트라이크 \(ball)볼\n"
         }
     }
 }
