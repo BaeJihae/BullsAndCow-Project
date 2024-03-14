@@ -11,6 +11,8 @@ class MainPlay {
         main()
     }
     
+    let recordManager = RecordManager()
+    
     // MARK: - 숫자를 선택하는 choiceNum() 함수
     private func choiceNum() -> Int {
         print("---------------------------------------")
@@ -62,4 +64,4 @@ class MainPlay {
 }
 
 // 게임 시작
-var main = MainPlay()
+var play = MainPlay()

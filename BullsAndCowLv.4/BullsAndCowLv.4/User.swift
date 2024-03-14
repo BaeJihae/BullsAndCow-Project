@@ -13,16 +13,6 @@ class User {
     // 유저가 제시한 숫자
     var userNum: Int?
     
-    init() {
-        self.count = 0
-        self.userNum = nil
-    }
-    
-    init(count: Int, userNum: Int? = nil) {
-        self.count = count
-        self.userNum = userNum
-    }
-    
     // 유저에게 입력값을 받는 함수
     func getUserInput() {
         let input = readLine()
@@ -53,6 +43,7 @@ class User {
         let hundred = input / 100
         let tenDigit = ( input % 100 ) / 10
         let one = input % 10
+        
         if hundred == tenDigit || tenDigit == one || hundred == one {
             print("숫자가 중복되었습니다.")
             return getUserInput()
