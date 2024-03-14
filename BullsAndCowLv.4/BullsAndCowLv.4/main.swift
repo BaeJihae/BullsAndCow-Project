@@ -81,48 +81,7 @@ func compareNum(_ user: Int, _ com: Int) -> String {
 }
 
 
-// MARK: - 게임 시작 startGame() 함수
-
-// 게임 시작 함수
-func startGame() {
-    
-    print("[ 숫자 야구 게임이 시작되었습니다. ]")
-    print("===========================")
-    print()
-    
-    let number = Number()
-    number.getRandomNum()
-    
-    let user = User()
-    
-    print("랜덤한 세자리 정수가 설정되었습니다.")
-    
-    while true {
-        print("------------------------------------------")
-        print("0부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
-        print("------------------------------------------")
-        user.userNum = getUserInput()
-        user.count += 1
-        
-        guard let userNum = user.userNum else { return }
-        guard let num = number.num else { return }
-        
-        if userNum == num {
-            print()
-            print("정답입니다!")
-            print("축하합니다. \(user.count)번 만에 정답을 맞추었습니다! ")
-            print()
-            break
-        }else{
-            // 비교하는 함수
-            print()
-            print("틀렸습니다!")
-            print(compareNum(userNum, num))
-            print()
-        }
-    }
-}
-
+// MARK: - 숫자를 선택하는 choiceNum() 함수
 func choiceNum() -> Int {
     print("---------------------------------------")
     print("1. 게임 시작하기   2. 게임 기록보기  3. 종료하기 ")
@@ -155,7 +114,8 @@ func main() {
     
     switch choice {
     case 1 :
-        startGame()
+        let startGame = GamePlay()
+        startGame.start()
         return main()
     case 2 :
         // 기록보기
