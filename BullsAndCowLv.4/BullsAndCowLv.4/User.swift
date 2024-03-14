@@ -32,7 +32,7 @@ class User {
         
         // 문자열이 3자리가 아닐 경우 에러처리
         if input.count != 3 {
-            print("1부터 9까지를 자릿수로 가지는 3자리 숫자를 입력해주세요.")
+            print("0부터 9까지를 자릿수로 가지는 3자리 숫자를 입력해주세요.")
             return getUserInput()
         }
         

@@ -7,8 +7,12 @@
 
 class MainPlay {
     
+    init() {
+        main()
+    }
+    
     // MARK: - 숫자를 선택하는 choiceNum() 함수
-    func choiceNum() -> Int {
+    private func choiceNum() -> Int {
         print("---------------------------------------")
         print("1. 게임 시작하기   2. 게임 기록보기  3. 종료하기 ")
         print("=======================================")
@@ -31,6 +35,7 @@ class MainPlay {
         }
     }
     
+    // MARK: - 메인 함수
     func main() {
         print("=======================================")
         print("환영합니다!! 원하시는 번호를 입력해주세요.")
@@ -58,4 +63,3 @@ class MainPlay {
 
 // 게임 시작
 var main = MainPlay()
-main.main()

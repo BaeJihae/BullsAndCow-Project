@@ -46,36 +46,36 @@ class GamePlay {
         }
     }
     
-    func compareNum(_ user: Int, _ com: Int) -> String {
+    private func compareNum(_ user: Int, _ com: Int) -> String {
         
-        // ball과 strike를 가지는 배열
-        var ballAndStrike = [0, 0]
-        // 파울을 계산하는 변수
-        var count = 0
+        // ball과 strike와 파울 계산
+        var ball = 0
+        var strike = 0
+        var faul = 0
         
         let arrayUser: [Int] = String(user).map{ Int(String($0))! }
         let arrayCom: [Int] = String(com).map{ Int(String($0))! }
         
-        for (i, userNum) in arrayUser.enumerated() {
+        arrayUser.enumerated().forEach{ (i, userNum) in
             if arrayCom.contains(userNum) {
                 if arrayCom.firstIndex(of: userNum)! == i {
-                    ballAndStrike[1] += 1
+                    strike += 1
                 }else {
-                    ballAndStrike[0] += 1
+                    ball += 1
                 }
             }else {
-                count += 1
+                faul += 1
             }
         }
         
-        if count == 3 {
+        if faul == 3 {
             return "파울"
-        }else if ballAndStrike[1] == 0{
-            return "\(ballAndStrike[0])볼"
-        }else if ballAndStrike[0] == 0{
-            return "\(ballAndStrike[1])스트라이크"
+        }else if strike == 0{
+            return "\(ball)볼"
+        }else if ball == 0{
+            return "\(strike)스트라이크"
         }else {
-            return "\(ballAndStrike[1])스트라이크 \(ballAndStrike[0])볼"
+            return "\(strike)스트라이크 \(ball)볼"
         }
     }
 }
