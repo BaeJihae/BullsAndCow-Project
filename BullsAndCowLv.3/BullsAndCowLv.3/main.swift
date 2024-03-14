@@ -22,9 +22,9 @@ func getUserInput() -> Int {
         return getUserInput()
     }
     
-    // 문자열에 0이 포함되어 있는 경우 에러처리
-    if input.contains("0") {
-        print("1부터 9까지의 숫자를 입력해주세요.")
+    // 문자열의 첫번째가 0이 포함되어 있는 경우 에러처리
+    if input.first == "0" {
+        print("세자리 숫자를 입력해주세요.")
         return getUserInput()
     }
     
@@ -100,7 +100,7 @@ func startGame() {
     
     while true {
         print("------------------------------------------")
-        print("1부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
+        print("0부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
         print("------------------------------------------")
         user.userNum = getUserInput()
         user.count += 1

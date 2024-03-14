@@ -13,7 +13,7 @@ class Number {
         
         while num.count < 3 {
             let a = Int.random(in: 0...9)
-            if ( num == [] && a != 0 ) || !num.contains(a) {
+            if num == [] || !num.contains(a) {
                 num.append(a)
             }
         }
