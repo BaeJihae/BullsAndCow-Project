@@ -50,10 +50,23 @@ func startGame() {
     let number = Number()
     number.getRandomNum()
     
+    let user = User()
+    
     print("랜덤한 세자리 정수가 설정되었습니다.")
     
-    print("1부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
-    
+    while true {
+        print("1부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
+        user.userNum = getUserInput()
+        user.count += 1
+        
+        if user.userNum == number.num {
+            print("정답입니다!")
+            print("축하합니다. \(user.count)만에 정답을 맞추었습니다! ")
+            break
+        }else{
+            // 비교하는 함수
+        }
+    }
 }
 
 
