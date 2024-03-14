@@ -4,6 +4,7 @@
 //
 //  Created by 배지해 on 3/14/24.
 //
+//  0부터 9까지의 야구 게임
 
 // MARK: - 유저에게 입력값을 받는 getUserInput() 함수
 
@@ -96,7 +97,6 @@ func startGame() {
     let user = User()
     
     print("랜덤한 세자리 정수가 설정되었습니다.")
-    print( number.num! )
     
     while true {
         print("------------------------------------------")
