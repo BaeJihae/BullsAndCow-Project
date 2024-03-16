@@ -60,7 +60,7 @@ class User {
     func setUserCount() {
         count += 1
     }
-    
+
     func getUserCount() -> Int {
         return count
     }
