@@ -13,7 +13,7 @@ class GamePlay {
         let number = Number()
         let user = User()
         
-        number.getRandomNum()
+        guard let num = number.getRandomNum() else { return 0 }
         
         while true {
             print("------------------------------------------")
@@ -22,7 +22,6 @@ class GamePlay {
             
             guard let userNum = user.getUserNum() else { return 0 }
             user.setUserCount()
-            guard let num = number.num else { return 0 }
             
             if userNum == num {
                 // 정답을 맞힌 경우

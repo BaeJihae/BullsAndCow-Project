@@ -14,7 +14,7 @@ class Number {
         
         while num.count < 3 {
             let a = Int.random(in: 0...9)
-            if num == [] && a != 0 {
+            if num.isEmpty && a != 0 {
                 num.append(a)
             }else if !num.contains(a) {
                 num.append(a)
