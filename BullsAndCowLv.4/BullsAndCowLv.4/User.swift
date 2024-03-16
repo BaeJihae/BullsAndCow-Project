@@ -14,7 +14,7 @@ class User {
     private var userNum: Int?
     
     // 유저에게 입력값을 받는 함수
-    func getUserInput() {
+    private func getUserInput() {
         let input = readLine()
         
         // 문자열이 입력되지 않았을 경우 에러처리
