@@ -8,10 +8,10 @@
 class User {
     
     // 정답까지의 횟수
-    var count: Int = 0
+    private var count: Int = 0
     
     // 유저가 제시한 숫자
-    var userNum: Int?
+    private var userNum: Int?
     
     // 유저에게 입력값을 받는 함수
     func getUserInput() {
@@ -50,6 +50,19 @@ class User {
         }
         
         self.userNum = input
+    }
+    
+    func getUserNum() -> Int? {
+        getUserInput()
+        return userNum
+    }
+    
+    func setUserCount() {
+        count += 1
+    }
+    
+    func getUserCount() -> Int {
+        return count
     }
     
 }

@@ -20,17 +20,16 @@ class GamePlay {
             print("0부터 9까지를 자리수로 가지는 3자리 정수를 입력해주세요.")
             print("------------------------------------------")
             
-            user.getUserInput()
-            user.count += 1
-            
-            guard let userNum = user.userNum else { return 0 }
+            guard let userNum = user.getUserNum() else { return 0 }
+            user.setUserCount()
             guard let num = number.num else { return 0 }
             
             if userNum == num {
                 // 정답을 맞힌 경우
+                let userCount = user.getUserCount()
                 print("정답입니다!")
-                print("축하합니다. \(user.count)번 만에 정답을 맞추었습니다!\n")
-                return user.count
+                print("축하합니다. \(userCount)번만에 정답을 맞추었습니다!\n")
+                return userCount
             }else{
                 // 정답을 틀린 경우
                 // 비교하는 함수
