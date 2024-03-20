@@ -45,8 +45,8 @@ class GamePlay {
         var strike = 0
         var faul = 0
         
-        let arrayUser: [Int] = String(user).map{ Int(String($0))! }
-        let arrayCom: [Int] = String(com).map{ Int(String($0))! }
+        let arrayUser: [Int] = String(user).compactMap{ Int(String($0)) }
+        let arrayCom: [Int] = String(com).compactMap{ Int(String($0)) }
         
         arrayUser.enumerated().forEach{ (i, userNum) in
             if arrayCom.contains(userNum) {
